@@ -74,3 +74,19 @@ jobs:
       -
         name: Lint Dockerfile
         uses: hadolint/hadolint-action@v3.1.0
+    
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          extensions: intl, zip
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+      - name: Install dependencies
+        run: composer install --no-progress --no-suggest
+      - name: Run PHPStan
+        run: composer phpstan --no-progress
+      - name: Run PHP-CS-Fixer
+        run: composer cs-fix --no-progress
+      - name: Run TwigCS
+        run: composer twigcs --no-progress
