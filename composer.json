@@ -58,6 +58,18 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "cs-fix": [
+            "vendor/bin/php-cs-fixer fix"
+        ],
+        "cs-check": [
+            "vendor/bin/php-cs-fixer fix --dry-run --diff"
+        ],
+        "phpstan": [
+            "vendor/bin/phpstan analyse --memory-limit=1G"
+        ],
+        "twigcs": [
+            "vendor/bin/twigcs templates"
         ]
     },
     "conflict": {
