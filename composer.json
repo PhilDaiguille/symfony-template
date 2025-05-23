@@ -13,7 +13,7 @@
         "symfony/asset": "7.2.*",
         "symfony/console": "7.2.*",
         "symfony/dotenv": "7.2.*",
-        "symfony/flex": "^2.5",
+        "symfony/flex": "^2.6",
         "symfony/framework-bundle": "7.2.*",
         "symfony/runtime": "7.2.*",
         "symfony/twig-bundle": "7.2.*",
@@ -60,10 +60,10 @@
             "@auto-scripts"
         ],
         "cs-fix": [
-            "vendor/bin/php-cs-fixer fix"
+            "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix"
         ],
         "cs-check": [
-            "vendor/bin/php-cs-fixer fix --dry-run --diff"
+            "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --dry-run --diff"
         ],
         "phpstan": [
             "vendor/bin/phpstan analyse --memory-limit=1G"
@@ -85,8 +85,8 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.75",
         "friendsoftwig/twigcs": "^6.5",
-        "phpstan/phpstan": "^2.1",
-        "rector/rector": "^2.0",
+        "phpstan/phpstan": "^2.1.17",
+        "rector/rector": "^2.0.16",
         "symfony/maker-bundle": "^1.63",
         "symfony/stopwatch": "7.2.*",
         "symfony/web-profiler-bundle": "7.2.*"
