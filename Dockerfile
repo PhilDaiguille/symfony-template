@@ -16,13 +16,12 @@ WORKDIR /app
 VOLUME /app/var/
 
 # persistent / runtime deps
-# hadolint ignore=DL3008
+# hadolint ignore=DL3018
 RUN apk add --no-cache \
-		acl \
-		file \
-		gettext \
-		git \
-;
+  acl \
+  file \
+  gettext \
+  git
 
 RUN set -eux; \
 	install-php-extensions \
