@@ -1,11 +1,15 @@
 version: 2
 updates:
   - package-ecosystem: "composer"
+    reviewers:
+        - "PhilDaiguille"
     directory: "/"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 10
     versioning-strategy: "increase"
+    vulnerability-alerts: true
+    insecure-external-code-execution: deny
     labels:
       - "dependencies"
       - "php"
@@ -27,6 +31,26 @@ updates:
         dependency-type: "development"
         patterns:
           - "*"
+      twig:
+        patterns:
+          - "twig/*"
+          - "symfony/twig*"
+        update-types:
+          - "minor"
+          - "patch"
+      phpstan:
+        patterns:
+          - "phpstan/*"
+        update-types:
+          - "minor"
+          - "patch"
+      rector-tools:
+          patterns:
+              - "rector/*"
+              - "friendsofphp/php-cs-fixer"
+          update-types:
+              - "minor"
+              - "patch"
 
   - package-ecosystem: "github-actions"
     directory: "/"

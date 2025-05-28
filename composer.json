@@ -3,21 +3,21 @@
     "type": "project",
     "license": "MIT",
     "description": "A minimal Symfony project recommended to create bare bones applications",
-    "minimum-stability": "stable",
+    "minimum-stability": "RC",
     "prefer-stable": true,
     "require": {
         "php": ">=8.3.20",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "runtime/frankenphp-symfony": "^0.2.0",
-        "symfony/asset": "7.2.*",
-        "symfony/console": "7.2.*",
-        "symfony/dotenv": "7.2.*",
-        "symfony/flex": "^2.7",
-        "symfony/framework-bundle": "7.2.*",
-        "symfony/runtime": "7.2.*",
-        "symfony/twig-bundle": "7.2.*",
-        "symfony/yaml": "7.2.*"
+        "symfony/asset": "7.3.*",
+        "symfony/console": "7.3.*",
+        "symfony/dotenv": "7.3.*",
+        "symfony/flex": "^2.7.1",
+        "symfony/framework-bundle": "7.3.*",
+        "symfony/runtime": "7.3.*",
+        "symfony/twig-bundle": "7.3.*",
+        "symfony/yaml": "7.3.*"
     },
     "config": {
         "allow-plugins": {
@@ -70,6 +70,22 @@
         ],
         "twigcs": [
             "vendor/bin/twigcs templates"
+        ],
+        "rector": [
+            "vendor/bin/rector"
+        ],
+        "rector:dry-run": [
+            "vendor/bin/rector --dry-run"
+        ],
+        "analyse": [
+            "@cs-check",
+            "@twigcs",
+            "@phpstan",
+            "@rector:dry-run"
+        ],
+        "fix":[
+            "@cs-fix",
+            "@rector"
         ]
     },
     "conflict": {
@@ -78,7 +94,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "7.2.*",
+            "require": "7.3.*",
             "docker": true
         }
     },
@@ -88,7 +104,7 @@
         "phpstan/phpstan": "^2.1.17",
         "rector/rector": "^2.0.16",
         "symfony/maker-bundle": "^1.63",
-        "symfony/stopwatch": "7.2.*",
-        "symfony/web-profiler-bundle": "7.2.*"
+        "symfony/stopwatch": "7.3.*",
+        "symfony/web-profiler-bundle": "7.3.*"
     }
 }
