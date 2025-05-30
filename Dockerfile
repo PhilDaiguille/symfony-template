@@ -21,7 +21,9 @@ RUN apk add --no-cache \
   acl \
   file \
   gettext \
-  git
+  git \
+  make \
+  gzip
 
 RUN set -eux; \
 	install-php-extensions \
