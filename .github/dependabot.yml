@@ -8,7 +8,6 @@ updates:
       interval: "weekly"
     open-pull-requests-limit: 10
     versioning-strategy: "increase"
-    vulnerability-alerts: true
     labels:
       - "dependencies"
       - "php"
