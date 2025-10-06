@@ -107,7 +107,7 @@
         "friendsofphp/php-cs-fixer": "^3.88.2",
         "friendsoftwig/twigcs": "^6.5",
         "phpstan/phpstan": "^2.1.29",
-        "rector/rector": "^2.1.7",
+        "rector/rector": "^2.2.1",
         "symfony/maker-bundle": "^1.64",
         "symfony/stopwatch": "7.3.*",
         "symfony/web-profiler-bundle": "7.3.*"
