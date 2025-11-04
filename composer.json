@@ -104,10 +104,10 @@
     "require-dev": {
         "roave/security-advisories": "dev-latest"
         ,
-        "friendsofphp/php-cs-fixer": "^3.88.2",
+        "friendsofphp/php-cs-fixer": "^3.89.1",
         "friendsoftwig/twigcs": "^6.5",
         "phpstan/phpstan": "^2.1.31",
-        "rector/rector": "^2.2.1",
+        "rector/rector": "^2.2.7",
         "symfony/maker-bundle": "^1.64",
         "symfony/stopwatch": "7.3.*",
         "symfony/web-profiler-bundle": "7.3.*"
