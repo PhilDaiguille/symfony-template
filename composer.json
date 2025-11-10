@@ -105,7 +105,7 @@
     "require-dev": {
         "roave/security-advisories": "dev-latest"
         ,
-        "friendsofphp/php-cs-fixer": "^3.89.1",
+        "friendsofphp/php-cs-fixer": "^3.89.2",
         "friendsoftwig/twigcs": "^6.5",
         "phpstan/phpstan": "^2.1.31",
         "rector/rector": "^2.2.7",
