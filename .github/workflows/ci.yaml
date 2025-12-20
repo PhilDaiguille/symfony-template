@@ -66,20 +66,8 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.4
-          extensions: intl, zip, mbstring, xml
-          coverage: none
-          tools: composer:v2
-      - name: Get Composer cache directory
-        id: composer-cache
-        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
-      - name: Cache Composer dependencies
-        uses: actions/cache@v5
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
+          php-version: 8.5
+          extensions: intl, zip, xml
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
       - name: Install dependencies

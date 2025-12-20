@@ -5,3 +5,8 @@ parameters:
         - config/
         - public/
         - src/
+    excludePaths:
+        - */var/cache/*
+        - */var/log/*
+        - */vendor/*
+        - */config/reference.php
