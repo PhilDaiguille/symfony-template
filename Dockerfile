@@ -31,6 +31,7 @@ RUN set -eux; \
 		intl \
 		opcache \
 		xml \
+        simplexml \
 		zip \
     ;
 
@@ -38,9 +39,6 @@ RUN set -eux; \
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
 ENV PHP_INI_SCAN_DIR=":$PHP_INI_DIR/app.conf.d"
-
-###> recipes ###
-###< recipes ###
 
 COPY --link frankenphp/conf.d/10-app.ini $PHP_INI_DIR/app.conf.d/
 COPY --link --chmod=755 frankenphp/docker-entrypoint.sh /usr/local/bin/docker-entrypoint
