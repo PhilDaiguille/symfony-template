@@ -22,18 +22,16 @@ RUN apk add --no-cache \
   git \
   make \
   gzip \
-  libxml2-dev \
+  libxml2-dev
 
 RUN set -eux; \
-	install-php-extensions \
-		@composer \
-		apcu \
-		intl \
-		opcache \
-		xml \
-        simplexml \
-		zip \
-    ;
+  install-php-extensions \
+    @composer \
+    apcu \
+    intl \
+    opcache \
+    xml \
+    zip
 
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER=1

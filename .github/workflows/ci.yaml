@@ -83,7 +83,7 @@ jobs:
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
       - name: Install dependencies
-        run: composer install --no-progress --no-suggest
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
       - name: Run PHPStan
         run: composer phpstan --no-progress
       - name: Run PHP-CS-Fixer
