@@ -21,28 +21,22 @@ RUN apk add --no-cache \
   file \
   git \
   make \
-  gzip
+  gzip \
+  libxml2-dev
 
 RUN set -eux; \
-	install-php-extensions \
-		@composer \
-		apcu \
-		intl \
-		opcache \
-		zip \
-        xml \
-	;
+  install-php-extensions \
+    @composer \
+    apcu \
+    intl \
+    opcache \
+    xml \
+    zip
 
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
-# Transport to use by Mercure (default to Bolt)
-ENV MERCURE_TRANSPORT_URL=bolt:///data/mercure.db
-
 ENV PHP_INI_SCAN_DIR=":$PHP_INI_DIR/app.conf.d"
-
-###> recipes ###
-###< recipes ###
 
 COPY --link frankenphp/conf.d/10-app.ini $PHP_INI_DIR/app.conf.d/
 COPY --link --chmod=755 frankenphp/docker-entrypoint.sh /usr/local/bin/docker-entrypoint
@@ -89,7 +83,7 @@ RUN set -eux; \
 COPY --link --exclude=frankenphp/ . ./
 
 RUN set -eux; \
-	mkdir -p var/cache var/log; \
+	mkdir -p var/cache var/log var/share; \
 	composer dump-autoload --classmap-authoritative --no-dev; \
 	composer dump-env prod; \
 	composer run-script --no-dev post-install-cmd; \
