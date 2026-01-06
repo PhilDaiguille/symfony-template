@@ -26,6 +26,10 @@
 		}
 	}
 
+	php_server {
+          hot_reload
+    }
+
 	root /app/public
 	encode zstd br gzip
 

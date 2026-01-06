@@ -66,12 +66,24 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.5
-          extensions: intl, zip, xml
+          php-version: 8.4
+          extensions: intl, zip, mbstring, xml
+          coverage: none
+          tools: composer:v2
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+      - name: Cache Composer dependencies
+        uses: actions/cache@v5
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
       - name: Install dependencies
-        run: composer install --no-progress --no-suggest
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
       - name: Run PHPStan
         run: composer phpstan --no-progress
       - name: Run PHP-CS-Fixer
@@ -86,8 +98,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Lint Code Base
-        uses: super-linter/super-linter/slim@v8
+        uses: super-linter/super-linter/@v8
         env:
+          GITHUB_ACTIONS_CONFIG_FILE: actionlint.yaml
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_CHECKOV: false
-          VALIDATE_TRIVY: false
