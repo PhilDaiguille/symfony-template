@@ -12,6 +12,7 @@ updates:
       - "dependencies"
       - "php"
       - "symfony"
+      - "automerge"
     allow:
       - dependency-type: "direct"
       - dependency-type: "indirect"
@@ -58,6 +59,7 @@ updates:
     labels:
       - "dependencies"
       - "github_actions"
+      - "automerge"
     commit-message:
       prefix: "github-actions"
       include: "scope"
@@ -70,6 +72,7 @@ updates:
     labels:
       - "dependencies"
       - "docker"
+      - "automerge"
     commit-message:
       prefix: "docker"
       include: "scope"
