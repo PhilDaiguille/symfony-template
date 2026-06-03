@@ -107,7 +107,7 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.92.3",
-        "phpstan/phpstan": "^2.1.33",
+        "phpstan/phpstan": "^2.2.1",
         "rector/rector": "^2.3.0",
         "symfony/maker-bundle": "^1.67.0",
         "symfony/stopwatch": "8.0.*",
