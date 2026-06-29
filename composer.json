@@ -13,7 +13,7 @@
         "symfony/asset": "8.0.*",
         "symfony/console": "8.0.*",
         "symfony/dotenv": "8.0.*",
-        "symfony/flex": "^2.10.0",
+        "symfony/flex": "^2.11.0",
         "symfony/framework-bundle": "8.0.*",
         "symfony/runtime": "8.0.*",
         "symfony/twig-bundle": "8.0.*",
